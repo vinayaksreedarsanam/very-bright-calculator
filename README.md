@@ -6,7 +6,7 @@
 ### Team Name: Quantum Absurdity
 
 ### Team Members
-- Team Lead: VINAYAK S- Cochin University College of Engineering Kuttanadu
+- Member 1: VINAYAK S- Cochin University College of Engineering Kuttanadu
 - Member 2: SREYAS S - Cochin University College of Engineering Kuttanadu
 
 ### Project Description
