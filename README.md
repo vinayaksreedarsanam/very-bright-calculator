@@ -122,9 +122,7 @@ graph TD
 ---
 
 ### Project Demo
-# Video
-[Add your demo video link here]
-*Demonstrating tactile mechanical key clicks, 15-step tensor decomposition, and the hilarious punchline discovery.*
+
 
 # Additional Demos
 - **Live Deployment**: [https://very-bright-calculator.vercel.app](https://very-bright-calculator.vercel.app)
