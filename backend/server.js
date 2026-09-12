@@ -6,6 +6,8 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import mongoose from 'mongoose';
 import analysisRoutes from './routes/analysisRoutes.js';
 
@@ -46,11 +48,12 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Mount routes
+// Mount routes on /api and root
 app.use('/api', analysisRoutes);
+app.use(analysisRoutes);
 
-// Root fallback
-app.get('/', (req, res) => {
+// API metadata endpoint
+app.get('/api/info', (req, res) => {
   res.json({
     name: 'Very Bright Calculator API',
     version: '1.0.0',
@@ -62,6 +65,18 @@ app.get('/', (req, res) => {
       health: 'GET /api/health'
     }
   });
+});
+
+// Serve frontend static files
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const distPath = path.resolve(__dirname, '../frondend/dist');
+app.use(express.static(distPath));
+
+// Catch-all SPA handler
+app.get('*', (req, res, next) => {
+  if (req.path.startsWith('/api')) return next();
+  res.sendFile(path.join(distPath, 'index.html'));
 });
 
 // Centralized error handler
