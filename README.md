@@ -6,9 +6,8 @@
 ### Team Name: Quantum Absurdity
 
 ### Team Members
-- Team Lead: Vinayak S - College of Engineering
-- Member 2: [Member Name] - [College]
-- Member 3: [Member Name] - [College]
+- Team Lead: VINAYAK S- Cochin University College of Engineering Kuttanadu
+- Member 2: SREYAS S - Cochin University College of Engineering Kuttanadu
 
 ### Project Description
 An unnecessarily over-engineered, cinematic web experience designed to make trivial arithmetic as academically agonizing as possible. When you ask it to compute `1 + 1` or `25 × 4`, it launches 15 dimensions of rigorous tensor reductions, topos classification, and Gaussian integral decompositions—only to calmly and confidently declare a divergent, incorrect final answer.
@@ -136,8 +135,7 @@ graph TD
 
 ## Team Contributions
 - **Vinayak S**: End-to-end full-stack architecture, React UI components, Web Audio procedural sound synthesis, skeuomorphic physical calculator styling, and algorithmic mathematical thesis generation.
-- **[Member 2]**: Mathematical formula curation, test cases, and presentation assets.
-- **[Member 3]**: Documentation, video demonstration, and project ideation.
+- **Sreyas S**: Mathematical formula curation, test cases, and presentation assets,Documentation, video demonstration, and project ideation.
 
 ---
 Made with ❤️ at TinkerHub Useless Projects
