@@ -3,7 +3,7 @@
 > *“Every simple question deserves an unnecessarily complicated answer.”*
 
 ## Basic Details
-### Team Name: Quantum Absurdity
+### Team Name: Ctrl C,V
 
 ### Team Members
 - Member 1: VINAYAK S- Cochin University College of Engineering Kuttanadu
