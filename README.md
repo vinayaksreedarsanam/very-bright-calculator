@@ -128,6 +128,7 @@ graph TD
 *Demonstrating tactile mechanical key clicks, 15-step tensor decomposition, and the hilarious punchline discovery.*
 
 # Additional Demos
+- **Live Deployment**: [https://very-bright-calculator.vercel.app](https://very-bright-calculator.vercel.app)
 - **GitHub Repository**: [https://github.com/vinayaksreedarsanam/very-bright-calculator](https://github.com/vinayaksreedarsanam/very-bright-calculator)
 - **Local Dev Server**: [http://localhost:5173](http://localhost:5173)
 
