@@ -1,0 +1,284 @@
+/* ==========================================================================
+   VERY BRIGHT CALCULATOR - LIGHT, CLEAN & REALISTIC CALCULATOR DESIGN SYSTEM
+   Modern, elegant, attractive, human-crafted aesthetic
+   ========================================================================== */
+
+:root {
+  --bg-main: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f1f5f9;
+  --bg-calc-body: #fdfdfd;
+  --bg-calc-lcd: #e2e8f0;
+  
+  --text-main: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-accent: #2563eb;
+
+  --border-light: #e2e8f0;
+  --border-medium: #cbd5e1;
+
+  --btn-num-bg: #ffffff;
+  --btn-num-hover: #f8fafc;
+  --btn-op-bg: #f1f5f9;
+  --btn-op-hover: #e2e8f0;
+  --btn-clear-bg: #fee2e2;
+  --btn-clear-hover: #fecaca;
+  --btn-clear-text: #dc2626;
+  --btn-calc-bg: #ea580c;
+  --btn-calc-hover: #c2410c;
+
+  --shadow-calc: 0 25px 60px -15px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(15, 23, 42, 0.05);
+  --shadow-key: 0 3px 0 #cbd5e1, 0 6px 12px rgba(15, 23, 42, 0.06);
+  --shadow-key-pressed: 0 1px 0 #cbd5e1, 0 2px 4px rgba(15, 23, 42, 0.04);
+  --shadow-key-calc: 0 3px 0 #9a3412, 0 6px 14px rgba(234, 88, 12, 0.25);
+
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Cinzel', serif;
+  --font-lcd: 'JetBrains Mono', monospace;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Subtle architectural dot grid background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: 
+    radial-gradient(circle, #cbd5e1 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography */
+.font-lcd {
+  font-family: var(--font-lcd);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Container */
+.container-clean {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Calculator Physical Chassis */
+.calc-chassis {
+  background: var(--bg-calc-body);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-calc);
+  border: 1px solid var(--border-light);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+/* Realistic LCD Screen */
+.calc-lcd-screen {
+  background: #0f172a;
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.6);
+  border: 2px solid #334155;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  justifyContent: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.calc-lcd-screen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Real Calculator Buttons */
+.calc-btn {
+  font-family: var(--font-display);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.15s ease;
+  outline: none;
+  position: relative;
+}
+
+.calc-btn:active {
+  transform: translateY(2px);
+  box-shadow: var(--shadow-key-pressed) !important;
+}
+
+.calc-btn-num {
+  background-color: var(--btn-num-bg);
+  color: var(--text-main);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-key);
+  font-size: 1.25rem;
+}
+
+.calc-btn-num:hover {
+  background-color: var(--btn-num-hover);
+}
+
+.calc-btn-op {
+  background-color: var(--btn-op-bg);
+  color: var(--text-accent);
+  border: 1px solid var(--border-medium);
+  box-shadow: var(--shadow-key);
+  font-size: 1.35rem;
+}
+
+.calc-btn-op:hover {
+  background-color: var(--btn-op-hover);
+}
+
+.calc-btn-clear {
+  background-color: var(--btn-clear-bg);
+  color: var(--btn-clear-text);
+  border: 1px solid #fca5a5;
+  box-shadow: 0 3px 0 #fca5a5, 0 6px 12px rgba(220, 38, 38, 0.08);
+  font-size: 1.1rem;
+}
+
+.calc-btn-clear:hover {
+  background-color: var(--btn-clear-hover);
+}
+
+.calc-btn-equals {
+  background-color: var(--btn-calc-bg);
+  color: #ffffff;
+  border: 1px solid #c2410c;
+  box-shadow: var(--shadow-key-calc);
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.calc-btn-equals:hover {
+  background-color: var(--btn-calc-hover);
+}
+
+/* Calculation Paper Tape / Step Ledger */
+.calc-tape-container {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Empty Switch Socket In Chassis during assembly */
+.calc-empty-slot {
+  background: #f1f5f9;
+  border-radius: var(--radius-md);
+  border: 1.5px dashed #cbd5e1;
+  box-shadow: inset 0 2px 5px rgba(15, 23, 42, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+}
+
+.calc-empty-slot::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background: rgba(226, 232, 240, 0.4);
+  border-radius: calc(var(--radius-md) - 3px);
+}
+
+/* Animations */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: fadeInSlideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulseGlowSoft {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.pulse-soft {
+  animation: pulseGlowSoft 2s infinite ease-in-out;
+}
+
+/* Custom Scrollbar for Tape */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

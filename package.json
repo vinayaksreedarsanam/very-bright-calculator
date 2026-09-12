@@ -1,0 +1,13 @@
+{
+  "name": "very-bright-calculator",
+  "version": "1.0.0",
+  "description": "Every simple question deserves an unnecessarily complicated answer.",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix frondend\" \"npm run dev --prefix backend\"",
+    "build": "npm run build --prefix frondend",
+    "install:all": "npm install && npm install --prefix backend && npm install --prefix frondend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
